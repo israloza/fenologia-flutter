@@ -110,7 +110,7 @@ class LoginPage extends StatelessWidget {
             obscureText: true,
             decoration: InputDecoration(
               icon: Icon( Icons.lock_outline, color: Colors.deepPurple ),
-              labelText: 'Contraseñass',
+              labelText: 'Contraseñas',
               counterText: snapshot.data,
               errorText: snapshot.error
             ),
