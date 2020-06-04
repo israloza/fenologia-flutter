@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:fenologia/src/bloc/provider.dart';
 
 class HomePage extends StatelessWidget {
   @override
@@ -14,10 +13,6 @@ class HomePage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text("Bienvenido"),
-            Divider(),
-            Text('Email: jonathanplata987@gmail.com'),
-            Divider(),
             _card(),
           ],
       ),
