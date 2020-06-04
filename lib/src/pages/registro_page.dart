@@ -107,9 +107,9 @@ class RegistroPage extends StatelessWidget {
   }
 
   Widget _crearBoton(LoginBloc bloc) {
-     formValidStream
+     /*formValidStream
      snapshot.hasData
-      true ? algo si true : algo si false
+      true ? algo si true : algo si false*/
 
     return StreamBuilder(
       stream: bloc.formValidStream,
@@ -125,7 +125,7 @@ class RegistroPage extends StatelessWidget {
             color: Colors.greenAccent,
             textColor: Colors.white,
             onPressed:
-                snapshot.hasData ? () => _register(/*bloc,*/ context) : null);
+                snapshot.hasData ? () => _register(bloc, context) : null);
       },
     );
   }

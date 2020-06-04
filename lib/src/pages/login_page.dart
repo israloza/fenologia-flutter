@@ -107,9 +107,9 @@ class LoginPage extends StatelessWidget {
   }
 
   Widget _crearBoton(LoginBloc bloc) {
-     formValidStream
+     /*formValidStream
      snapshot.hasData
-      true ? algo si true : algo si false
+      true ? algo si true : algo si false*/
 
     return StreamBuilder(
       stream: bloc.formValidStream,
@@ -132,7 +132,7 @@ class LoginPage extends StatelessWidget {
   _login(LoginBloc bloc, BuildContext context) async {
     Map info=await usuarioProvider.login(bloc.email, bloc.password);
     if(info['ok']){
-      Navigator.pushReplacementNamed(context, 'home');
+      Navigator.pushReplacementNamed(context, 'login');
     }else{
       mostrarAlerta(context,info['mensaje']);
     }
