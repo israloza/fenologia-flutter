@@ -133,7 +133,7 @@ class RegistroPage extends StatelessWidget {
   _register(LoginBloc bloc, BuildContext context) async {
     final info = await usuarioProvider.nuevoUsuario(bloc.email, bloc.password);
     if (info['ok']) {
-      Navigator.pushReplacementNamed(context, 'home');
+      Navigator.pushReplacementNamed(context, 'login');
     } else {
       mostrarAlerta(context, info['mensaje']);
     }
