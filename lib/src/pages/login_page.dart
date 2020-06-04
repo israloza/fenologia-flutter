@@ -74,7 +74,7 @@ class LoginPage extends StatelessWidget {
           child: TextField(
             keyboardType: TextInputType.emailAddress,
             decoration: InputDecoration(
-                icon: Icon(Icons.alternate_email, color: Colors.deepPurple),
+                icon: Icon(Icons.alternate_email, color: Colors.greenAccent),
                 hintText: 'ejemplo@correo.com',
                 labelText: 'Correo electrónico',
                 counterText: snapshot.data,
@@ -95,7 +95,7 @@ class LoginPage extends StatelessWidget {
           child: TextField(
             obscureText: true,
             decoration: InputDecoration(
-                icon: Icon(Icons.lock_outline, color: Colors.deepPurple),
+                icon: Icon(Icons.lock_outline, color: Colors.greenAccent),
                 labelText: 'Contraseñas',
                 counterText: snapshot.data,
                 errorText: snapshot.error),
@@ -107,9 +107,9 @@ class LoginPage extends StatelessWidget {
   }
 
   Widget _crearBoton(LoginBloc bloc) {
-    // formValidStream
-    // snapshot.hasData
-    //  true ? algo si true : algo si false
+     formValidStream
+     snapshot.hasData
+      true ? algo si true : algo si false
 
     return StreamBuilder(
       stream: bloc.formValidStream,
@@ -122,7 +122,7 @@ class LoginPage extends StatelessWidget {
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(5.0)),
             elevation: 0.0,
-            color: Colors.deepPurple,
+            color: Colors.greenAccent,
             textColor: Colors.white,
             onPressed: snapshot.hasData ? () => _login(bloc, context) : null);
       },
@@ -148,8 +148,8 @@ class LoginPage extends StatelessWidget {
       width: double.infinity,
       decoration: BoxDecoration(
           gradient: LinearGradient(colors: <Color>[
-        Color.fromRGBO(63, 63, 156, 1.0),
-        Color.fromRGBO(90, 70, 178, 1.0)
+        Colors.green,
+        Colors.greenAccent,
       ])),
     );
 

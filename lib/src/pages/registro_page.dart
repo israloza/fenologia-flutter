@@ -45,7 +45,7 @@ class RegistroPage extends StatelessWidget {
                 ]),
             child: Column(
               children: <Widget>[
-                Text('Nuevo Usuario', style: TextStyle(fontSize: 20.0)),
+                Text('Nuevo Usuario', style: TextStyle(color:Colors.green,fontSize: 20.0)),
                 SizedBox(height: 60.0),
                 _crearEmail(bloc),
                 SizedBox(height: 30.0),
@@ -57,7 +57,7 @@ class RegistroPage extends StatelessWidget {
           ),
           FlatButton(
             onPressed: () => Navigator.pushReplacementNamed(context, 'login'),
-            child: Text('¿Ya tienes cuenta? Login.'),
+            child: Text('¿Ya tienes cuenta? Login.')
           ),
           SizedBox(height: 100.0)
         ],
@@ -74,7 +74,7 @@ class RegistroPage extends StatelessWidget {
           child: TextField(
             keyboardType: TextInputType.emailAddress,
             decoration: InputDecoration(
-                icon: Icon(Icons.alternate_email, color: Colors.deepPurple),
+                icon: Icon(Icons.alternate_email, color: Colors.greenAccent),
                 hintText: 'ejemplo@correo.com',
                 labelText: 'Correo electrónico',
                 counterText: snapshot.data,
@@ -95,7 +95,7 @@ class RegistroPage extends StatelessWidget {
           child: TextField(
             obscureText: true,
             decoration: InputDecoration(
-                icon: Icon(Icons.lock_outline, color: Colors.deepPurple),
+                icon: Icon(Icons.lock_outline, color: Colors.greenAccent),
                 labelText: 'Contraseñas',
                 counterText: snapshot.data,
                 errorText: snapshot.error),
@@ -107,9 +107,9 @@ class RegistroPage extends StatelessWidget {
   }
 
   Widget _crearBoton(LoginBloc bloc) {
-    // formValidStream
-    // snapshot.hasData
-    //  true ? algo si true : algo si false
+     formValidStream
+     snapshot.hasData
+      true ? algo si true : algo si false
 
     return StreamBuilder(
       stream: bloc.formValidStream,
@@ -122,10 +122,10 @@ class RegistroPage extends StatelessWidget {
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(5.0)),
             elevation: 0.0,
-            color: Colors.deepPurple,
+            color: Colors.greenAccent,
             textColor: Colors.white,
             onPressed:
-                snapshot.hasData ? () => _register(bloc, context) : null);
+                snapshot.hasData ? () => _register(/*bloc,*/ context) : null);
       },
     );
   }
@@ -133,7 +133,7 @@ class RegistroPage extends StatelessWidget {
   _register(LoginBloc bloc, BuildContext context) async {
     final info = await usuarioProvider.nuevoUsuario(bloc.email, bloc.password);
     if (info['ok']) {
-      Navigator.pushReplacementNamed(context, 'login');
+      Navigator.pushReplacementNamed(context, 'home');
     } else {
       mostrarAlerta(context, info['mensaje']);
     }
@@ -148,8 +148,8 @@ class RegistroPage extends StatelessWidget {
       width: double.infinity,
       decoration: BoxDecoration(
           gradient: LinearGradient(colors: <Color>[
-        Color.fromRGBO(63, 63, 156, 1.0),
-        Color.fromRGBO(90, 70, 178, 1.0)
+        Colors.greenAccent,
+        Colors.green,
       ])),
     );
 
@@ -173,10 +173,10 @@ class RegistroPage extends StatelessWidget {
           padding: EdgeInsets.only(top: 80.0),
           child: Column(
             children: <Widget>[
-              Icon(Icons.person_pin_circle, color: Colors.white, size: 100.0),
+              Icon(Icons.person_add,color: Colors.white, size: 100.0),
               SizedBox(height: 10.0, width: double.infinity),
               Text('Fenología',
-                  style: TextStyle(color: Colors.white, fontSize: 25.0))
+                  style: TextStyle(color: Colors.white, fontSize: 30.0))
             ],
           ),
         )
